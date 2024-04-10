@@ -5,8 +5,8 @@ jobs:
     strategy:
       matrix:
         node-version: [12, 14, 16]
-        operating-ststem: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.operating-ststem }}
+        operating-system: [ubuntu-latest, ubuntu-20.04]
+    runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Get Code a
         uses: actions/checkout@v4
