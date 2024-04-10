@@ -1,0 +1,20 @@
+name: matrix Demo
+on: push
+jobs:
+  bluid:
+    strategy:
+      matrix:
+        node-version: [12, 14, 16]
+        operating-ststem: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.operating-ststem }}
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v4
+      - name: Install NodeJs
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Dependecies
+        uses: npm ci
+      - name: build project
+        run: npm run build
