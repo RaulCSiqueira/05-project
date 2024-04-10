@@ -8,7 +8,7 @@ jobs:
         operating-ststem: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.operating-ststem }}
     steps:
-      - name: Get Code
+      - name: Get Code a
         uses: actions/checkout@v4
       - name: Install NodeJs
         uses: actions/setup-node@v4
